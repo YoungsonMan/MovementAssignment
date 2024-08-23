@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class propellerRotate : MonoBehaviour
 {
@@ -10,14 +7,24 @@ public class propellerRotate : MonoBehaviour
 
     [SerializeField] float angle;
     [SerializeField] float revolutionPower;
+    public float flyPower;
 
 
     public Transform target;
 
     private void Update()
     {
-       RotateAround();
-       if ( Input.GetButtonDown("Fly"))
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        Vector3 moveDir = new Vector3(x, 0, z);
+        if (moveDir == Vector3.zero)
+            return;
+        target.Translate(moveDir.normalized * flyPower * Time.deltaTime, Space.World);
+
+        RotateAround();
+        Fly();
+
+        if (Input.GetButtonDown("Fly"))
         {
             Debug.Log("Fly Button is down");
         }
@@ -33,6 +40,15 @@ public class propellerRotate : MonoBehaviour
     private void RotateAround() // 기준점을 중심으로 회전
     {
         transform.RotateAround(target.position, Vector3.up, revolutionPower * Time.deltaTime);
+    }
+
+    private void Fly()
+    {
+        float y = Input.GetAxis("Fly");
+        if (Input.GetButton("Fly"))
+        { 
+            target.Translate(Vector3.up.normalized * y * flyPower * Time.deltaTime);
+        }
     }
 
 }
