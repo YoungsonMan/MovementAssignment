@@ -805,7 +805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b32190b7218af6346aec7f1f76cdcecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1050605652}
+  player: {fileID: 764696619}
 --- !u!1 &991515967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,8 +1249,8 @@ MonoBehaviour:
   flyLimit: 0
   rigid: {fileID: 0}
   angle: 1
-  revolutionPower: 100
-  flyPower: 1
+  revolutionPower: 1000
+  flyPower: 3.22
   target: {fileID: 764696619}
 --- !u!1 &1996831538
 GameObject:

@@ -14,15 +14,11 @@ public class propellerRotate : MonoBehaviour
 
     private void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 moveDir = new Vector3(x, 0, z);
-        if (moveDir == Vector3.zero)
-            return;
-        target.Translate(moveDir.normalized * flyPower * Time.deltaTime, Space.World);
+
 
         RotateAround();
         Fly();
+        Move();
 
         if (Input.GetButtonDown("Fly"))
         {
@@ -39,16 +35,28 @@ public class propellerRotate : MonoBehaviour
     }
     private void RotateAround() // 기준점을 중심으로 회전
     {
-        transform.RotateAround(target.position, Vector3.up, revolutionPower * Time.deltaTime);
+        if (Input.GetButton("Fly"))
+        {
+            transform.RotateAround(target.position, Vector3.up, revolutionPower * Time.deltaTime);
+        }
     }
 
     private void Fly()
     {
         float y = Input.GetAxis("Fly");
         if (Input.GetButton("Fly"))
-        { 
+        {
             target.Translate(Vector3.up.normalized * y * flyPower * Time.deltaTime);
         }
+    }
+    private void Move()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        Vector3 moveDir = new Vector3(x, 0, z);
+        if (moveDir == Vector3.zero)
+            return;
+        target.Translate(moveDir.normalized * flyPower * Time.deltaTime, Space.World);
     }
 
 }
