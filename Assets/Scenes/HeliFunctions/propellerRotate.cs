@@ -55,7 +55,7 @@ public class propellerRotate : MonoBehaviour
         if (Input.GetButton("Fly"))
         {
             Debug.LogWarning($"Fly Button is pressing\n" +
-                $"RPM: {curRPM}");
+                $"RPM: {curRPM}\t" + $"Altitude: {curAltitude}");
         }
 
         #endregion
@@ -77,14 +77,21 @@ public class propellerRotate : MonoBehaviour
 
     // < 날기 >
     // 특정 rpm 넘어야 날라가는 기능 추가해야함.
-    private void Fly() // 날기, 특정 rpm 넘어야 도는 기능 추가해야함
+    private void Fly() // 날기
     {
         float y = Input.GetAxis("Fly");
-        if (Input.GetButton("Fly") && curRPM >= goalRPM)
+        if (Input.GetButton("Fly") && curRPM >= goalRPM) //특정 rpm 넘어야 
         {   
             // 부력 가속
             curFlyPower += flyPower * Time.deltaTime;
             target.Translate(Vector3.up.normalized * y * flyPower * Time.deltaTime);
+            // 높이 제한 두기
+            curAltitude = target.position.y;
+            if(curAltitude >= maxAltitude)
+            {
+                curAltitude = maxAltitude;
+            }
+            
         }
 
     }
