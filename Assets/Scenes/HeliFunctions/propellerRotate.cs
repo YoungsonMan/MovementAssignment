@@ -15,16 +15,16 @@ public class propellerRotate : MonoBehaviour
     [SerializeField] public float rpm = 1050;
 
     [Space]
-    [Header("------Propeller Limit------")]                  // 프로펠러 제어
-    [SerializeField] public float maxRPM = 10500;
+    [Header("------Propeller Limit------")]                 // 프로펠러 제어
+    [SerializeField] public float maxRPM = 10500;           // 최대 회전속도    
     public float minRPM = 0;
-    public float goalRPM = 4200;
-    private float curRPM;
+    public float goalRPM = 4200;                            // 이륙을 위한 회전속도
+    private float curRPM;                                   // 현재 회전속도
     [Space(2)]
 
     [Header("--------LevitatePower--------")]               // 부력
-    [Range(1,10)][SerializeField]public float flyPower = 1;
-    private float maxFlyPower = 10;
+    [Range(1,10)][SerializeField]public float flyPower = 1; // 뜨는 힘
+    private float maxFlyPower = 10;                         // 최대 힘 - 너무 확떠버리면 고도제한 50밖에 안되서 노잼    
     private float minFlyPower = 0;
     private float curFlyPower;
     [Space(2)]
@@ -38,14 +38,14 @@ public class propellerRotate : MonoBehaviour
 
 
     [Header("---------Movement---------")]                  // 움직임
-    [SerializeField] float moveSpeed = 5;
-    [SerializeField] float rotateSpeed = 100;
+    [SerializeField] public float moveSpeed = 5;
+    [SerializeField] public float rotateSpeed = 100;
 
 
     private void LateUpdate() //LateUpdate로 업데이트에서 작동 다한 후에 되게하기
     {
         // 손땐거 감지하면 현재rpm 반토막
-        if (Input.GetButtonUp("Fly")) 
+        if (Input.GetButtonUp("Fly")) // 설정에서 키워드 "Fly"로
         {
             curRPM /= 2;
         }
@@ -105,6 +105,7 @@ public class propellerRotate : MonoBehaviour
             {
                 curAltitude = maxAltitude;
                 target.Translate(Vector3.down.normalized * y * flyPower * Time.deltaTime);
+                // 같은 힘으로 다운포스줘서 못올라가게 하기
             }      
         }
         // 입력 안되면 내려가기
@@ -124,11 +125,11 @@ public class propellerRotate : MonoBehaviour
     }
     private void Move()
     {
+        // 키입력 받기    
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-    
 
-
+        // 움직임, 스페이스.셀프로 각도바꿔서 움직이게하기
         target.Translate(Vector3.forward.normalized * z * moveSpeed * Time.deltaTime, Space.Self);
         target.Rotate(Vector3.up, x * rotateSpeed * Time.deltaTime);
     }
