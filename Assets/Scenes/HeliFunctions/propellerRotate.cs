@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -37,10 +38,20 @@ public class propellerRotate : MonoBehaviour
 
 
     [Header("---------Movement---------")]                  // 움직임
-    [SerializeField] float moveSpeed = 50;
-    [SerializeField] float rotateSpeed = 50;
+    [SerializeField] float moveSpeed = 5;
+    [SerializeField] float rotateSpeed = 100;
 
 
+    private void LateUpdate() //LateUpdate로 업데이트에서 작동 다한 후에 되게하기
+    {
+        // 손땐거 감지하면 현재rpm 반토막
+        if (Input.GetButtonUp("Fly")) 
+        {
+            curRPM /= 2;
+        }
+        
+        
+    }
 
     private void Update()
     {
@@ -55,7 +66,7 @@ public class propellerRotate : MonoBehaviour
         if (Input.GetButton("Fly"))
         {
             Debug.LogWarning($"Fly Button is pressing\n" +
-                $"RPM: {curRPM}");
+                $"RPM: {curRPM}\t" + $"Altitude: {curAltitude}");
         }
 
         #endregion
@@ -64,28 +75,51 @@ public class propellerRotate : MonoBehaviour
     {
         if (Input.GetButton("Fly"))
         {
-            // delTime으로 frame/sec 마다 입력되고있으면 rpm 증가
+            // deltaTime으로 frame/sec 마다 입력되고있으면 rpm 증가
             curRPM += rpm * Time.deltaTime;
             transform.RotateAround(target.position, Vector3.up, curRPM * Time.deltaTime);
             if (curRPM >= maxRPM)
             {// rpm이 최대치 도달하면 그 값 유지
                 curRPM = maxRPM;
             }
+       
         }
     }
 
 
     // < 날기 >
     // 특정 rpm 넘어야 날라가는 기능 추가해야함.
-    private void Fly() // 날기, 특정 rpm 넘어야 도는 기능 추가해야함
+    private void Fly() // 날기
     {
         float y = Input.GetAxis("Fly");
-        if (Input.GetButton("Fly") && curRPM >= goalRPM)
-        {   
+        if (Input.GetButton("Fly") && curRPM >= goalRPM) //특정 rpm 넘어야 
+        {
             // 부력 가속
             curFlyPower += flyPower * Time.deltaTime;
+            flyPower += curFlyPower / 10 * Time.deltaTime; // 올라가는 속도 가속
             target.Translate(Vector3.up.normalized * y * flyPower * Time.deltaTime);
+
+            // 최고높이 제한 두기
+            curAltitude = target.position.y;
+            if(curAltitude >= maxAltitude)
+            {
+                curAltitude = maxAltitude;
+                target.Translate(Vector3.down.normalized * y * flyPower * Time.deltaTime);
+            }      
         }
+        // 입력 안되면 내려가기
+        if (Input.GetButton("Fly") != true)
+        {
+            int downForce = 5;
+            target.Translate(Vector3.down * downForce * Time.deltaTime);
+            // 0밑, 땅파고 내려가지 않도록 제한두기
+            curAltitude = target.position.y;
+            if (curAltitude <= minAltitude)
+            {   // 땅파고 계속안내려가게 0되면 위에 같은힘으로 상쇄.
+                target.Translate(Vector3.up * downForce * Time.deltaTime); 
+            }
+        }
+
 
     }
     private void Move()
