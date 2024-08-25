@@ -10,14 +10,14 @@ public class Revolution : MonoBehaviour
 
     // Revolving speed
     /* PLANET   |     YEARS     | inGameSpeed |
-     * Mercury  |   0.24 yrs    |     416.67
-     * Venus    |   0.61 yrs    |     163.93
-     * Earth    |   1.0 yrs     |     100     
-     * Mars     |   1.88 yrs    |     53.19
-     * Jupiter  |   11.86 yrs   |     8.43
-     * Saturn   |   29.46 yrs   |     3.39
-     * Uranus   |   84.01 yrs   |     1.19
-     * Neptune  |   164.79 yrs  |     0.61
+     * Mercury  |   0.24 yrs    |     416.67  |  
+     * Venus    |   0.61 yrs    |     163.93  |
+     * Earth    |   1.0 yrs     |     100     | 
+     * Mars     |   1.88 yrs    |     53.19   |
+     * Jupiter  |   11.86 yrs   |     8.43    |  
+     * Saturn   |   29.46 yrs   |     3.39    |  
+     * Uranus   |   84.01 yrs   |     1.19    |  
+     * Neptune  |   164.79 yrs  |     0.61    |
      */
     public float revSpeed;
 
@@ -36,4 +36,5 @@ public class Revolution : MonoBehaviour
         transform.RotateAround(target.position, Vector3.up, revSpeed * Time.deltaTime);
     }
 
+    
 }
