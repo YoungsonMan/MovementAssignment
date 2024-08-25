@@ -29,6 +29,57 @@
 !!! 어떠한 경우에도 에셋스토어 활용은 금하며, 헬리콥터의 몸체, 블레이드 꼬리 등은 기본 오브젝트만을 조합해 제작한다.
 
 
+# 위치 이동 구현 과제 번외. 태양계 좌전 공전
+
+- 좌전 & 공전 주기 구하고 지구를 기준으로 비율 맞춰서 조정
+- 공전: 회전 하는 기능 구현 하고 태양을 기준으로 회전
+- 실제 처럼 궤도를 구현 못하니 그냥 한방향(Vector3.up)으로
+- 좌전: 회전 하는 기능 구현 하고 각자 기준으로 회전
+- 위성: 회전 하는 기능 구현 하고 그 행성을 기준으로 회전
+
+
+| Planet | Distance from Sun (based on au but different ratio) |
+| --- | --- |
+| Mercury | 0.39 * 278.2 = 100.16 |
+| Venus | 0.72 * 278.2 = 200.30 |
+| Earth | 1 * 278.2 = 278.2 |
+| Mars | 1.52 * 278.2 = 422.86 |
+| Jupiter | 5.2 * 278.2 = 1446.64 / 2.5 = 578.66 |
+| Saturn | 9.54 * 278.2 = 2654.03 / 3 = 884.68 |
+| Uranus | 19.2 * 278.2 = 5341.44 / 4.5 =  1,186.99 |
+| Neptune | 30.6 * 278.2 = 8512.92 / 6 = 1,418.82 |
+|  |  |
+
+| Planet | Diameter | Rotation | inGameSpeed (rotation) | Revolution | inGameSpeed (revolution) |
+| --- | --- | --- | --- | --- | --- |
+| SUN | 139.1 |  | 100/rot(yrs) * 100 |  | 100/rev(yrs) * 100 |
+| Mercury | 0.49 * 30 = 14.7 | 58.6 days = 0.16055 yrs | 62286 | 0.24 yrs | 416.67 |
+| Venus | 1.21 * 20 = 24.2 | 243 days = 0.66576 yrs | 15020 | 0.61 yrs | 163.93 |
+| Earth | 1.28 * 20 = 25.6 | 1.0 days = 0.00274 yrs | 3649635 | 1.0 yrs | 100 |
+| Mars | 0.68 * 30 = 20.4 | 1.03 days = 0.00282 yrs | 3546099 | 1.88 yrs | 53.19 |
+| Jupiter | 14.30 * 4 = 57.2 | 0.41 days = 0.00112 yrs | 8928571 | 11.86 yrs | 8.43 |
+| Saturn | 12.05 * 4 = 48.2 | 0.45 days = 0.00123 yrs | 8130081 | 29.46 yrs | 3.39 |
+| Uranus | 5.11 * 6 = 30.66 | 0.72 days = 0.00197 yrs | 5076142 | 84.01 yrs | 1.19 |
+| Neptune | 4.95 * 6 = 29.7 | 0.67 days = 0.00184 yrs | 5434783 | 164.79 yrs | 0.61 |
+|  |  |  |  |  |  |
+| Moon | 대충 1/4 of Earth | 27.3 days |  | 0.075 yrs |  |
+|  |  |  |  |  |  |
+| Io Jupiter I | 3660.0  |  |  | 1.769  days | 0.00485 | 2016856 |
+| Europa Jupiter II | 3121.6  |  |  | 3.551 days | 0.00973 | 1027749 |
+| Ganymede Jupiter III | 5268.2  |  |  | 7.155 days | 0.0196 | 510204 |
+| Callisto Jupiter IV | 4820.6 |  |  | 16.689 days | 0.04572 | 218722 |
+
+
+참조:
+
+https://www.exploratorium.edu/explore/solar-system/age
+
+https://www.jpl.nasa.gov/edu/pdfs/scaless_reference.pdf
+
+https://en.wikipedia.org/wiki/Galilean_moons
+
+https://science.nasa.gov/jupiter/moons/
+
 
 ### Built with
 
@@ -60,5 +111,13 @@ Visual Studio 2022 v17.10.3
 
 물체가 이상하게 만들어졌나 움직이는 기능이 화전은 되는데 앞뒤로 안움직여서 그냥 버튼 안누르면 내려가게 함수구현
 
-![정리노트리사이즈-0](https://github.com/user-attachments/assets/3dc2f6bf-b35f-4e4a-8dd3-b678ad36f1fd)
+---
+![240824SolarOrbit2](https://github.com/user-attachments/assets/dfeb15f2-57ac-40ab-9015-f1adb4e4ae97)
+
+
+태양계 행성들을 실제 사이즈와 거리를 실제사이즈 토대로 비율을 맞춰서 구현 하려고 했는데
+
+행성들은 너무 작고, 거리도 꽤 멀어서, 사이즈를 좀 보기 쉽게 키우고, 뒤에 행성들도 좀 떙겨서 구현.
+
+
 아.. 나도 태블릿에 펜으로 정리하고싶다
