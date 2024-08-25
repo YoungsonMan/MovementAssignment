@@ -211,7 +211,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246061303}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 139.1, y: 139.1, z: 139.1}
   m_ConstrainProportionsScale: 1
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 752276412}
   - component: {fileID: 752276411}
   m_Layer: 0
-  m_Name: 06Saturn
+  m_Name: 06SaturnX4
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -308,9 +308,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 752276410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2654.03, y: 0, z: 0}
-  m_LocalScale: {x: 12.05, y: 12.05, z: 12.05}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 884.68, y: 0, z: 0}
+  m_LocalScale: {x: 48.2, y: 48.2, z: 48.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 1419259473}
   - component: {fileID: 1419259472}
   m_Layer: 0
-  m_Name: 07Uranus
+  m_Name: 07UranusX6
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -405,9 +405,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419259471}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5341.44, y: 0, z: 0}
-  m_LocalScale: {x: 5.11, y: 5.11, z: 5.11}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1186.99, y: 0, z: 0}
+  m_LocalScale: {x: 30.66, y: 30.66, z: 30.66}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -457,7 +457,7 @@ GameObject:
   - component: {fileID: 1437085297}
   - component: {fileID: 1437085296}
   m_Layer: 0
-  m_Name: 08Neptune
+  m_Name: 08NeptuneX6
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -533,9 +533,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437085295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8512.92, y: 0, z: 0}
-  m_LocalScale: {x: 4.95, y: 4.95, z: 4.95}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1418.82, y: 0, z: 0}
+  m_LocalScale: {x: 29.7, y: 29.7, z: 29.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 1819103291}
   - component: {fileID: 1819103290}
   m_Layer: 0
-  m_Name: 05Jupiter
+  m_Name: 05JupiterX4
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -714,9 +714,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1819103289}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1446.64, y: 0, z: 0}
-  m_LocalScale: {x: 14.3, y: 14.3, z: 14.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 578.66, y: 0, z: 0}
+  m_LocalScale: {x: 57.2, y: 57.2, z: 57.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 1843225474}
   - component: {fileID: 1843225473}
   m_Layer: 0
-  m_Name: 03Earth
+  m_Name: 03EarthX20
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -811,9 +811,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1843225472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 278.2, y: 0, z: 0}
-  m_LocalScale: {x: 1.28, y: 1.28, z: 1.28}
+  m_LocalScale: {x: 25.599998, y: 25.599998, z: 25.599998}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 1902529732}
   - component: {fileID: 1902529731}
   m_Layer: 0
-  m_Name: 01Mercury
+  m_Name: 01MercuryX30
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1002,9 +1002,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1902529730}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 100.16, y: 0, z: 0}
-  m_LocalScale: {x: 0.49, y: 0.49, z: 0.49}
+  m_LocalScale: {x: 14.7, y: 14.7, z: 14.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1023,7 +1023,7 @@ GameObject:
   - component: {fileID: 1997284996}
   - component: {fileID: 1997284995}
   m_Layer: 0
-  m_Name: 02Venus
+  m_Name: 02VenusX20
   m_TagString: Planet
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1099,9 +1099,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997284994}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 200.3, y: 0, z: 0}
-  m_LocalScale: {x: 1.21, y: 1.21, z: 1.21}
+  m_LocalScale: {x: 24.2, y: 24.2, z: 24.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 2023932047}
   - component: {fileID: 2023932046}
   m_Layer: 0
-  m_Name: 04Mars
+  m_Name: 04MarsX30
   m_TagString: Planet
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1196,9 +1196,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2023932045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 422.86, y: 0, z: 0}
-  m_LocalScale: {x: 0.68, y: 0.68, z: 0.68}
+  m_LocalScale: {x: 20.4, y: 20.4, z: 20.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
